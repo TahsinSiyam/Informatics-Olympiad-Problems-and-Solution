@@ -37,6 +37,24 @@ void bfs(){
    cout<<endl;
 }
 
+void dfsHelper(int u, vector<bool> &vis){
+   cout<<u<<" ";
+   vis[u] = true;
+
+   for(int v: l[u]){
+      if(!vis[v]){
+         dfsHelper(v,vis);
+      }
+   }
+}
+void dfs(){
+   int src = 0;
+   vector<bool> vis(V, false);
+
+   dfsHelper(src, vis);
+   cout<<endl;
+}
+
 };
 
 int main(){
@@ -50,5 +68,6 @@ int main(){
    g.addEdge(2, 3);
    g.addEdge(2, 4);
    g.bfs();
+   g.dfs();
    return 0;
 }
