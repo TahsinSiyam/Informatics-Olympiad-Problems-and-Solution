@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 class Graph{
    int V;
    list<int> *l;
@@ -61,6 +62,8 @@ int main(){
 
    ios::sync_with_stdio(0);
    cin.tie(0);
+   int V = 6;
+   vector<vector<WeightedGraph>> wg(V);
    Graph g(5);
    g.addEdge(0, 1);
    g.addEdge(1, 2);

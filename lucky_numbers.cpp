@@ -1,25 +1,26 @@
-// 4, 7, 44, 47, 74, 77, 444, 447, 474, 477, 744, 747, 774, 777
-
-#include <bits/stdc++.h>
-// Solution for A Lucky Number
+#include <iostream>
 using namespace std;
 
-int main(){
-
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	long long n;
-	cin>>n;
-	int arr[] = {4, 7, 44, 47, 74, 77, 444, 447, 474, 477, 744, 747, 774, 777};
-	int index = 0;
-	while(true){
-		if(n%arr[index]==0){
-			cout<<"YES";
-			break;
-		}
-		else{
-			index++;
-		}
-	}
-	return 0;
+int main() {
+    int n;
+    cin >> n;
+    
+    // All lucky numbers up to 1000
+    int lucky[] = {4, 7, 47, 74, 44, 444, 447, 474, 477, 777, 774, 744};
+    bool isAlmostLucky = false;
+    
+    for (int i = 0; i < 12; i++) {
+        if (n % lucky[i] == 0) {
+            isAlmostLucky = true;
+            break;
+        }
+    }
+    
+    if (isAlmostLucky) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+    
+    return 0;
 }
